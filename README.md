@@ -137,7 +137,13 @@ takar-edu/
 ├── pages/
 ├── uploads/
 ├── vendor/
+├── .env.example
+├── .gitignore
+├── LICENSE
+├── README.md
 ├── composer.json
+├── composer.lock
+├── DEVELOPMENT_NOTES.txt
 ├── requirements.txt
 └── index.php
 ```
