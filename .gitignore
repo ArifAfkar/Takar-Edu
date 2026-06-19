@@ -1,0 +1,29 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Uploads
+uploads/editor/*
+uploads/profile/*
+uploads/wacana/*
+
+!uploads/editor/.gitkeep
+!uploads/profile/.gitkeep
+!uploads/wacana/.gitkeep
+
+# AI logs
+ajax/answer/ai_grader_log.txt
+ajax/answer/ai_grader_output.txt
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

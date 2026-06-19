@@ -1,0 +1,2640 @@
+/* =======================================================
+    TAKAR-EDU MAIN APPLICATION STYLESHEET
+======================================================= */
+
+/* =======================================================
+    BREAKPOINT REFERENCE
+
+    Mobile Phone          : 0px    - 639px
+    Large Phone           : 640px  - 767px
+    Tablet                : 768px  - 1023px
+    Laptop / Desktop      : 1024px+
+
+    Common Usage:
+    max-width: 639px      = Mobile Only
+    max-width: 767px      = Phone Only
+    max-width: 1023px     = Tablet and Below
+
+    min-width: 640px      = Large Phone+
+    min-width: 768px      = Tablet+
+    min-width: 1024px     = Laptop / Desktop+
+======================================================= */
+
+/* =======================================================
+    1. ROOT / GLOBAL RESET
+======================================================= */
+/* ---------- Universal Box Sizing ---------- */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- Base Document Styles ---------- */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* ---------- Responsive Images ---------- */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- Form Element Typography ---------- */
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ---------- Button Defaults ---------- */
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* ---------- Link Defaults ---------- */
+a {
+    text-decoration: none;
+}
+
+/* =======================================================
+    2. AUTH / LOGIN SYSTEM
+======================================================= */
+/* ---------- Page Center Layout ---------- */
+.page-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #f3f4f6;
+}
+
+/* ---------- Authentication Container ---------- */
+.auth-container {
+    width: 100%;
+    max-width: 24rem;
+}
+
+@media (min-width: 640px) {
+    .auth-container {
+        max-width: 28rem;
+    }
+}
+
+/* ---------- Authentication Brand ---------- */
+.auth-brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+}
+
+@media (min-width: 640px) {
+    .auth-brand-title {
+        font-size: 1.875rem;
+    }
+}
+
+.auth-brand-subtitle {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+@media (min-width: 640px) {
+    .auth-brand-subtitle {
+        font-size: 0.875rem;
+    }
+}
+
+/* ---------- Authentication Card ---------- */
+.auth-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+}
+
+/* ---------- Authentication Header ---------- */
+.auth-header {
+    background: #2563eb;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .auth-header {
+        padding:1.25rem;
+    }
+}
+
+/* ---------- Authentication Body ---------- */
+.auth-body {
+    padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .auth-body {
+        padding:2rem;
+    }
+}
+
+/* ---------- Authentication Title ---------- */
+.auth-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width:768px) {
+    .auth-title {
+        font-size:1.25rem;
+    }
+}
+
+/* ---------- Login Error Message ---------- */
+.login-error {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #b91c1c;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+/* =======================================================
+    3. GLOBAL LAYOUT SYSTEM
+======================================================= */
+/* ---------- Main Content Wrapper ---------- */
+.main-content {
+    min-height: 100vh;
+    background: #f3f4f6;
+    margin-left: 0;
+    padding: 4rem 1rem 2.5rem;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding-top: 5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        margin-left: 15rem;
+    }
+}
+
+/* ---------- Page Container ---------- */
+.page-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-container-sm {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-container-md {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =======================================================
+    4. TOP NAVBAR SYSTEM
+======================================================= */
+/* ---------- Top Navbar ---------- */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    color: #fff;
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    box-shadow: 0 10px 15px rgba(15, 23, 42, 0.18);
+}
+
+@media (min-width: 768px) {
+    .top-navbar {
+        height: 3.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .top-navbar {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* ---------- Sidebar Toggle Button ---------- */
+.navbar-toggle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: #1d4ed8;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+@media (min-width: 768px) {
+    .navbar-toggle {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}
+
+.navbar-toggle:hover {
+    background: #1e40af;
+}
+
+/* ---------- Left Navigation Group ---------- */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .navbar-left {
+        gap: 1rem;
+    }
+}
+
+/* ---------- Right Navigation Group ---------- */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ---------- Brand Container ---------- */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* ---------- Brand Icon ---------- */
+.navbar-brand-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}
+
+/* ---------- Brand Text ---------- */
+.navbar-brand-text {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand-text {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar-brand-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* =======================================================
+    5. SIDEBAR SYSTEM
+======================================================= */
+/* ---------- Sidebar Container ---------- */
+.sidebar {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    height: calc(100dvh - 48px);
+    width: 15rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-right: 1px solid #e5e7eb;
+    box-shadow: 0 10px 15px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    transition:
+    transform 0.3s ease,
+    width 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        top: 3.5rem;
+        height: calc(100dvh - 56px);
+    }
+}
+
+/* ---------- Sidebar Navigation ---------- */
+.sidebar-nav {
+    flex: 1;
+    min-height: 0;
+    padding: 1rem 0.75rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    touch-action: pan-y;
+}
+
+/* ---------- Navigation Links ---------- */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.sidebar-link-active {
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ---------- Logout Link ---------- */
+.sidebar-logout-link {
+    margin-top: 2rem;
+    color: #dc2626;
+}
+
+.sidebar-logout-link:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* ---------- Link Content ---------- */
+.sidebar-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.sidebar-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+/* ---------- Collapsed Sidebar ---------- */
+.sidebar-collapsed {
+    width: 6rem;
+}
+
+.sidebar-collapsed .sidebar-text {
+    display: none !important;
+}
+
+.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+    gap: 0;
+    padding: 0.75rem 0.5rem;
+}
+
+.main-content-collapsed {
+    margin-left: 6rem;
+}
+
+/* ---------- Mobile Overlay ---------- */
+.sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 950;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+body.sidebar-mobile-open {
+    overflow: hidden;
+}
+
+/* =======================================================
+    6. USER DROPDOWN SYSTEM
+======================================================= */
+/* ---------- Dropdown Toggle ---------- */
+.user-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.user-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Navbar User Avatar ---------- */
+.user-avatar {
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.user-avatar-placeholder {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+/* ---------- Desktop User Info ---------- */
+
+.user-info-desktop {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .user-info-desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        line-height: 1.25;
+        max-width: 14rem;
+        overflow: hidden;
+    }
+}
+
+/* ---------- Dropdown Container ---------- */
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    margin-top: 0.75rem;
+    width: 16rem;
+    z-index: 1200;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.18);
+}
+
+@media (min-width: 768px) {
+    .user-dropdown {
+        width: 18rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .user-dropdown {
+        width: 20rem;
+    }
+}
+
+/* ---------- Dropdown Header ---------- */
+.user-dropdown-header {
+    padding: 1rem;
+    background: #eff6ff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.user-dropdown-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-dropdown-profile > div {
+    min-width: 0;
+}
+
+.user-dropdown-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 640px) {
+    .user-dropdown-avatar {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+.user-dropdown-avatar-placeholder {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .user-dropdown-avatar-placeholder {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+/* ---------- User Identity ---------- */
+.user-name {
+    display: block;
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+    .user-name {
+        font-size: 1rem;
+    }
+}
+
+.user-role {
+    display: block;
+    margin-top: 0.125rem;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ---------- Dropdown Body ---------- */
+.user-dropdown-body {
+    padding: 0.75rem 1rem;
+}
+
+.user-dropdown-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    color: #374151;
+}
+
+@media (min-width: 640px) {
+    .user-dropdown-info {
+        font-size: 0.875rem;
+    }
+}
+
+/* ---------- Dropdown Footer ---------- */
+.user-dropdown-footer {
+    padding: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ---------- Profile Shortcut Button ---------- */
+.profile-shortcut-btn,
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+}
+
+.profile-shortcut-btn {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.profile-shortcut-btn:hover {
+    background: #dbeafe;
+}
+
+/* ---------- Logout Button ---------- */
+.logout-btn {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+.logout-btn:hover {
+    background: #fee2e2;
+}
+
+/* =======================================================
+    7. PAGE HEADER SYSTEM
+======================================================= */
+/* ---------- Page Header Wrapper ---------- */
+.page-header {
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- Page Header Content ---------- */
+.page-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .page-header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* ---------- Page Title ---------- */
+.page-title {
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.25;
+}
+
+/* ---------- Page Description ---------- */
+.page-description {
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* =======================================================
+    8. CARD SYSTEM
+======================================================= */
+/* ---------- Base Cards ---------- */
+.section-card,
+.content-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem;
+}
+
+/* ---------- Statistic Card ---------- */
+.stat-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+@media (max-width: 767px) {
+    .stat-card {
+        padding: 0.875rem;
+    }
+}
+
+/* ---------- Statistic Icon ---------- */
+.stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .stat-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
+
+/* ---------- Statistic Label ---------- */
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* ---------- Statistic Value ---------- */
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1;
+}
+
+/* ---------- Section Header ---------- */
+.section-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Section Title ---------- */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* ---------- Section Icon ---------- */
+.section-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* =======================================================
+    9. FORM SYSTEM
+======================================================= */
+/* ---------- Form Group ---------- */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- Form Label ---------- */
+.form-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* ---------- Base Form Controls ---------- */
+.form-input,
+.form-control,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #111827;
+    transition: all 0.2s ease;
+}
+
+/* ---------- Input and Select Padding ---------- */
+.form-input,
+.form-control,
+.form-select {
+    padding: 0.65rem 1rem;
+}
+
+/* ---------- Textarea Control ---------- */
+.form-textarea {
+    padding: 0.75rem 1rem;
+    resize: vertical;
+}
+
+/* ---------- Panel Header ---------- */
+.panel-header {
+    margin-bottom: 1rem;
+}
+
+.panel-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.panel-description {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* ---------- Form Control Focus State ---------- */
+.form-input:focus,
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* ---------- Readonly Form Control ---------- */
+.form-control-readonly {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* ---------- Inline Error Message ---------- */
+.inline-error {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #ef4444;
+}
+
+/* ---------- File Upload Input ---------- */
+.file-upload {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* ---------- File Upload Button ---------- */
+.file-upload::file-selector-button {
+    margin-right: 1rem;
+    padding: 0.625rem 1rem;
+    border: 0;
+    border-radius: 0.75rem;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.file-upload::file-selector-button:hover {
+    background: #dbeafe;
+}
+
+/* ---------- File Upload Note ---------- */
+.file-note {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* =======================================================
+    10. PASSWORD FIELD SYSTEM
+======================================================= */
+/* ---------- Password Input Wrapper ---------- */
+.password-wrapper {
+    position: relative;
+}
+
+/* ---------- Password Input Spacing ---------- */
+.password-input {
+    padding-right: 3.25rem;
+}
+
+/* ---------- Password Toggle Button ---------- */
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #2563eb;
+}
+
+.password-toggle:focus {
+    outline: none;
+}
+
+/* ---------- Native Password Reveal Buttons ---------- */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-password-toggle-button {
+    display: none !important;
+}
+
+/* =======================================================
+    11. BUTTON SYSTEM
+======================================================= */
+/* ---------- Shared Button Base ---------- */
+.btn-primary,
+.form-btn,
+.action-btn,
+.action-btn-lg,
+.page-action-btn,
+.back-button,
+.exam-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* ---------- Primary Button ---------- */
+.btn-primary {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ---------- Secondary Button ---------- */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #374151;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+}
+
+/* ---------- Form Button ---------- */
+.form-btn {
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.65rem;
+    font-size: 0.75rem;
+    gap: 0.375rem;
+}
+
+@media (max-width: 767px) {
+    .form-btn {
+        padding: 0.4rem 0.7rem;
+        border-radius: 0.6rem;
+    }
+}
+
+/* ---------- Modal Footer Button ---------- */
+.modal-footer .form-btn,
+.global-modal-footer .form-btn {
+    min-width: 100px;
+    height: 42px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.875rem;
+}
+
+/* ---------- Form Button Variants ---------- */
+.form-btn-primary {
+    color: #fff;
+    background: #2563eb;
+}
+
+.form-btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.form-btn-secondary {
+    color: #374151;
+    background: #fff;
+    border: 1px solid #d1d5db;
+}
+
+.form-btn-secondary:hover {
+    background: #f9fafb;
+}
+
+.form-btn-danger {
+    color: #fff;
+    background: #dc2626;
+}
+
+.form-btn-danger:hover {
+    background: #b91c1c;
+}
+
+/* ---------- Action Button Group ---------- */
+.action-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .action-group {
+        flex-wrap: nowrap;
+    }
+}
+
+/* ---------- Action Button ---------- */
+.action-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .action-btn {
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+    }
+}
+
+.action-btn-lg {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* ---------- Action Label ---------- */
+.action-label {
+    display: inline;
+}
+
+@media (max-width: 767px) {
+    .action-label {
+        display: none;
+    }
+}
+
+/* ---------- Action Button Variants ---------- */
+.action-primary,
+.action-info {
+    color: #4338ca;
+    background: #e0e7ff;
+}
+
+.action-primary:hover,
+.action-info:hover {
+    background: #c7d2fe;
+}
+
+.action-success {
+    color: #047857;
+    background: #d1fae5;
+}
+
+.action-success:hover {
+    background: #a7f3d0;
+}
+
+.action-danger {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.action-danger:hover {
+    background: #fecaca;
+}
+
+.action-warning {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.action-warning:hover {
+    background: #fde68a;
+}
+
+.action-secondary,
+.action-disabled {
+    color: #5b606a;
+    background: #f3f4f6;
+}
+
+/* ---------- Page ---------- */
+.page-action-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* ---------- Back Button ---------- */
+.back-button {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: #374151;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.back-button:hover {
+    background: #f9fafb;
+}
+
+/* =======================================================
+    12. ALERT / NOTICE SYSTEM
+======================================================= */
+/* ---------- Base Alert ---------- */
+.alert,
+.alert-box {
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+}
+
+/* ---------- Alert Variants ---------- */
+.alert-danger,
+.alert-error {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.alert-success {
+    background: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.alert-warning {
+    background: #fef3c7;
+    border-color: #fcd34d;
+    color: #92400e;
+}
+
+/* ---------- Base Notice Card ---------- */
+.notice-card {
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 1.25rem;
+}
+
+/* ---------- Notice Variants ---------- */
+.notice-info {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1d4ed8;
+}
+
+.notice-warning {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.notice-danger {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.notice-success {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+    color: #047857;
+}
+
+/* ---------- Validation State ---------- */
+.validation-box-error {
+    border-color: #ef4444 !important;
+    background: #fef2f2 !important;
+}
+
+/* =======================================================
+    13. BADGE SYSTEM
+======================================================= */
+/* ---------- Base Badge ---------- */
+.badge,
+.status-badge,
+.info-badge,
+.meta-badge,
+.point-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ---------- Standard Badges ---------- */
+.badge,
+.status-badge {
+    padding: 0.25rem 0.75rem;
+}
+
+/* ---------- Information Badges ---------- */
+.info-badge,
+.meta-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+}
+
+/* ---------- Point Badge ---------- */
+.point-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* ---------- Success ---------- */
+.status-success,
+.badge-success,
+.status-active {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+/* ---------- Danger ---------- */
+.status-danger,
+.badge-danger,
+.status-inactive {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* ---------- Warning ---------- */
+.status-warning,
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+/* ---------- Info ---------- */
+.status-info,
+.badge-info {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+}
+
+/* ---------- Secondary ---------- */
+.status-secondary,
+.badge-secondary {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+/* ---------- Fixed Width Badge ---------- */
+.badge-pill-info {
+    min-width: 88px;
+    height: 2rem;
+    padding: 0 0.75rem;
+    justify-content: center;
+}
+
+/* =======================================================
+    14. SEARCH / FILTER SYSTEM
+======================================================= */
+/* ---------- Toolbar Layout ---------- */
+.table-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .table-toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.table-length-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .table-length-control {
+        width: auto;
+    }
+}
+
+.table-control-label {
+    font-size: 0.75rem;
+    color: #374151;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .table-control-label {
+        font-size: 0.875rem;
+    }
+}
+
+/* ---------- Search Input ---------- */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .search-wrapper {
+        width: 20rem;
+    }
+}
+
+.input-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 0.625rem 2.5rem 0.625rem 1rem;
+    font-size: 0.875rem;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* ---------- Filter Controls ---------- */
+.filter-select {
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    background: #fff;
+}
+
+/* =======================================================
+    15. TABLE SYSTEM
+======================================================= */
+/* ---------- Table Wrapper ---------- */
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+}
+
+/* ---------- Table Scrollbar ---------- */
+.table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 999px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 999px;
+}
+
+/* ---------- Base Table ---------- */
+.app-table {
+    min-width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+/* ---------- Table Header ---------- */
+.app-table-head {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+/* ---------- Table Row ---------- */
+.app-table-row {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+}
+
+.app-table-row:hover {
+    background: #f9fafb;
+}
+
+/* ---------- Table Cells ---------- */
+.table-th {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.table-td {
+    padding: 1rem;
+    color: #374151;
+}
+
+/* ---------- Table Text ---------- */
+.table-td-title {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.table-subtext {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* ---------- Table Footer ---------- */
+.table-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .table-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* =======================================================
+    16. PAGINATION SYSTEM
+======================================================= */
+/* ---------- Page Information ---------- */
+.page-info {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+@media (min-width: 640px) {
+    .page-info {
+        font-size: 0.875rem;
+    }
+}
+
+/* ---------- Pagination Container ---------- */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.pagination-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Pagination Button ---------- */
+.pagination-btn {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-color: #93c5fd;
+}
+
+/* ---------- Active State ---------- */
+.pagination-active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+/* ---------- Disabled State ---------- */
+.pagination-disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* =======================================================
+    17. EMPTY STATE SYSTEM
+======================================================= */
+/* ---------- Empty State Layout ---------- */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* ---------- Empty State Table Cell ---------- */
+.empty-state-cell {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* ---------- Empty State Icon ---------- */
+.empty-state-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    background: #f3f4f6;
+    color: #9ca3af;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+/* ---------- Empty State Title ---------- */
+.empty-state-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+/* =======================================================
+    18. MODAL SYSTEM
+======================================================= */
+/* ---------- Modal Overlay ---------- */
+.global-modal,
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+
+/* ---------- Modal Visible State ---------- */
+.global-modal.flex,
+.modal-overlay.flex {
+    display: flex;
+}
+
+
+/* ---------- Modal Card ---------- */
+.global-modal-card,
+.modal-card {
+    width: 100%;
+    max-width: 42rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
+    overflow: hidden;
+}
+
+/* ---------- Modal Header ---------- */
+.global-modal-header,
+.modal-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* ---------- Modal Body ---------- */
+.global-modal-body,
+.modal-body {
+    padding: 1.25rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/* ---------- Modal Footer ---------- */
+.global-modal-footer,
+.modal-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* ---------- Modal Title ---------- */
+.modal-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* ---------- Modal Close Button ---------- */
+.modal-close {
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #111827;
+}
+
+/* ---------- Modal Form ---------- */
+.modal-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* =======================================================
+    19. DISTRIBUTION / SELECTION SYSTEM
+======================================================= */
+/* ---------- Selection Container ---------- */
+.checkbox-grid,
+.selection-container {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #f9fafb;
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.checkbox-grid {
+    display: grid;
+    gap: 0.75rem;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+/* ---------- Selection Card ---------- */
+.checkbox-card,
+.selection-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkbox-card:hover,
+.selection-card:hover {
+    border-color: #60a5fa;
+    background: #eff6ff;
+}
+
+.checkbox-card-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.checkbox-card-text {
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+/* ---------- Bulk Actions ---------- */
+.multi-select-toolbar,
+.bulk-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Inline Checkbox ---------- */
+.checkbox-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-inline-input {
+    border-color: #d1d5db;
+    color: #2563eb;
+}
+
+.checkbox-inline-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* ---------- Small Link Button ---------- */
+.link-danger-sm {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #dc2626;
+}
+
+.link-danger-sm:hover {
+    color: #b91c1c;
+}
+
+/* ---------- Access Panel ---------- */
+.access-panel {
+    border: 1px solid #fde68a;
+    background: #fffbeb;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ---------- Dropdown Card ---------- */
+.dropdown-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.18);
+}
+
+/* ---------- Dropdown Trigger ---------- */
+.table-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.75rem;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.table-dropdown-btn:hover {
+    background: #e5e7eb;
+}
+
+/* ---------- Floating Dropdown ---------- */
+.table-floating-dropdown {
+    position: fixed;
+    z-index: 99999;
+    min-width: 220px;
+    max-height: 18rem;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
+    text-align: left;
+}
+
+/* ---------- Dropdown Header ---------- */
+.table-dropdown-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    text-align: left;
+}
+
+.table-dropdown-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* ---------- Dropdown Items ---------- */
+.table-dropdown-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    text-align: left;
+}
+
+.table-dropdown-item:last-child {
+    border-bottom: 0;
+}
+
+/* =======================================================
+    20. EDITOR / EQUATION SYSTEM
+======================================================= */
+/* ---------- Editor Toolbar ---------- */
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Editor Hint ---------- */
+.editor-hint {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* ---------- Equation Button ---------- */
+.equation-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    color: #4338ca;
+    background: #e0e7ff;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.equation-btn:hover {
+    background: #c7d2fe;
+}
+
+/* ---------- Mini Equation Button ---------- */
+.mini-equation-btn {
+    height: 1.75rem;
+    padding: 0 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #c7d2fe;
+    background: #fff;
+    color: #4338ca;
+    transition: background-color 0.2s ease;
+}
+
+.mini-equation-btn:hover {
+    background: #e0e7ff;
+}
+
+/* ---------- Equation Builder Card ---------- */
+.equation-builder-card {
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+}
+
+/* ---------- Equation Preview ---------- */
+.equation-preview {
+    border: 1px solid #bfdbfe;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+}
+
+/* =======================================================
+    21. PREVIEW / PHET SYSTEM
+======================================================= */
+/* ---------- Preview Card ---------- */
+.preview-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    transition: box-shadow 0.2s ease;
+}
+
+.preview-card:hover {
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.14);
+}
+
+/* ---------- Preview Overlay ---------- */
+.preview-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.35);
+    transition: opacity 0.2s ease;
+}
+
+.preview-card:hover .preview-overlay {
+    opacity: 1;
+}
+
+/* ---------- PhET Preview Button ---------- */
+.phet-preview-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    background: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.phet-preview-btn:hover {
+    background: #1d4ed8;
+}
+
+/* =======================================================
+    22. EXAM / CBT SYSTEM
+======================================================= */
+/* ---------- Exam Layout ---------- */
+.exam-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 96rem;
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+    .exam-layout {
+        height: 100vh;
+        overflow: hidden;
+        flex-direction: row;
+    }
+}
+
+.exam-main,
+.exam-sidebar {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    overflow: hidden;
+}
+
+.exam-main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.exam-sidebar {
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .exam-sidebar {
+        width: 20rem;
+        height: 100%;
+    }
+}
+
+/* ---------- Exam Header ---------- */
+.exam-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 1.5rem;
+}
+
+.exam-timer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+.exam-violation {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #ef4444;
+    font-weight: 500;
+}
+
+/* ---------- Progress Bar ---------- */
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: #e5e7eb;
+}
+
+.progress-bar-fill {
+    height: 0.5rem;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+/* ---------- Exam Content ---------- */
+.exam-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.content-reference-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+/* ---------- Question Content ---------- */
+.question-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.question-content {
+    color: #111827;
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+/* ---------- Exam Navigation ---------- */
+.exam-nav-btn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+    .exam-nav-btn {
+        width: auto;
+    }
+}
+
+.exam-finish-section {
+    padding: 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #111827;
+}
+
+/* ---------- Exam Footer ---------- */
+.exam-footer {
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .exam-footer {
+        flex-direction: row;
+    }
+}
+
+/* ---------- Question Grid ---------- */
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.question-nav-btn {
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.question-nav-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Table Answer ---------- */
+.table-answer-input {
+    width: 100%;
+    min-width: 90px;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #93c5fd;
+    border-radius: 0.5rem;
+    background: #eff6ff;
+}
+
+.table-answer-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* ---------- Fullscreen Overlay ---------- */
+.fullscreen-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #020617;
+}
+
+.fullscreen-card {
+    width: 100%;
+    max-width: 28rem;
+    padding: 1.75rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.3);
+}
+
+.fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    color: #fff;
+    background: #2563eb;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.fullscreen-btn:hover {
+    background: #1d4ed8;
+}
+
+/* =======================================================
+    23. RESULT / VIEW ANSWER SYSTEM
+======================================================= */
+/* ---------- Result Header ---------- */
+.result-header-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Result Statistic ---------- */
+.result-stat-card {
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+/* ---------- Review Question ---------- */
+.review-question {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.review-question:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* ---------- Question Number ---------- */
+.question-number {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background: #2563eb;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ---------- Answer Box ---------- */
+.answer-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color: #1f2937;
+}
+
+/* ---------- Option Review ---------- */
+.option-review-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    background: #fff;
+}
+
+/* ---------- AI Category / Score Card ---------- */
+.ai-category-card,
+.score-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.score-card {
+    background: #f9fafb;
+}
+
+/* =======================================================
+    24. WACANA / ANSWER TABLE CONTENT
+======================================================= */
+/* ---------- Wacana Content ---------- */
+.wacana-content {
+    color: #374151;
+    line-height: 1.75;
+    overflow-x: auto;
+}
+
+/* ---------- Wacana Table Wrapper ---------- */
+.wacana-content figure.table {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* ---------- Base Content Table ---------- */
+.wacana-content table,
+.student-answer-table table {
+    border-collapse: collapse;
+    border: 1px solid #d1d5db;
+}
+
+/* ---------- Wacana Table ---------- */
+.wacana-content table {
+    width: auto;
+    margin: 0 auto;
+}
+
+/* ---------- Student Answer Table ---------- */
+.student-answer-table table {
+    width: auto;
+    margin: 0;
+}
+
+/* ---------- Table Header Cell ---------- */
+.wacana-content th,
+.student-answer-table th {
+    border: 1px solid #d1d5db;
+    background: #f3f4f6;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ---------- Table Body Cell ---------- */
+.wacana-content td,
+.student-answer-table td {
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+}
+
+/* ---------- Filled Student Cell ---------- */
+.student-filled-cell {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+/* =======================================================
+    25. HELP / ACCORDION SYSTEM
+======================================================= */
+/* ---------- Help Card ---------- */
+.help-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+/* ---------- Help Card Header ---------- */
+.help-card-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.help-card-header:hover {
+    background: #f9fafb;
+}
+
+/* ---------- Help Card Content ---------- */
+.help-card-content {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #f3f4f6;
+    background: #f9fafb;
+}
+
+/* ---------- Help Item Icon ---------- */
+.help-item-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.75rem;
+    background: #eff6ff;
+    color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ---------- Accordion Icon ---------- */
+.accordion-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: #f3f4f6;
+    color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* =======================================================
+    26. ABOUT / DOCUMENTATION SYSTEM
+======================================================= */
+/* ---------- About Hero ---------- */
+.about-hero {
+    text-align: center;
+}
+
+.about-hero-icon {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.5rem;
+    background: #dbeafe;
+    color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.about-hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.about-hero-subtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .about-hero-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* ---------- Feature Card ---------- */
+.feature-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background: #fff;
+}
+
+/* ---------- Information Table ---------- */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.info-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.info-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.info-table-label {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.info-table-value {
+    color: #374151;
+}
+
+/* ---------- Article Content ---------- */
+.article-content {
+    color: #374151;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.article-content > * + * {
+    margin-top: 1rem;
+}
+
+/* ---------- Profile Photo ---------- */
+.profile-photo {
+    width: 9rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+    margin: auto;
+}
+
+/* ---------- Repository Card ---------- */
+.repository-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #f9fafb;
+    padding: 1rem;
+}
+
+/* =======================================================
+    27. PROFILE PAGE SYSTEM
+======================================================= */
+/* ---------- Profile Container ---------- */
+.profile-container {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    padding: 2rem;
+}
+
+/* ---------- Profile Preview ---------- */
+.profile-preview {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 9999px;
+    background: linear-gradient(to bottom right, #3b82f6, #1d4ed8);
+    border: 4px solid #dbeafe;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.16);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Profile Information Card ---------- */
+.profile-info-card {
+    background: #f9fafb;
+    border: 1px solid #f3f4f6;
+    border-radius: 1rem;
+    padding: 1.25rem;
+}
+
+/* ---------- Profile Information ---------- */
+.profile-info-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.profile-info-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* ---------- Profile Status ---------- */
+.profile-status {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.profile-status-active {
+    color: #16a34a;
+}
+
+.profile-status-inactive {
+    color: #dc2626;
+}
+
+/* =======================================================
+    28. FOOTER
+======================================================= */
+/* ---------- Page Footer ---------- */
+.page-footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
