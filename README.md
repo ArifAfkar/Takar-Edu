@@ -98,10 +98,16 @@ OPENAI_API_KEY=your_openai_api_key
 Import file:
 
 ```text
-database/takaredu_db.sql
+database/example_takaredu_db.sql
 ```
 
 ke MySQL atau MariaDB.
+
+Setelah proses import selesai, pastikan database yang digunakan pada konfigurasi aplikasi sesuai dengan nama database yang dibuat, misalnya:
+
+```env
+DB_NAME=takaredu_db
+```
 
 ### 6. Jalankan Aplikasi
 
