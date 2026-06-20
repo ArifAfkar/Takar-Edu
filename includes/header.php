@@ -121,15 +121,6 @@
 <!-- ---------- SweetAlert2 ---------- -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- ---------- SweetAlert Helper ---------- -->
-<script src="../assets/js/swal-helper.js"></script>
-
-<!-- ---------- UI Helper ---------- -->
-<script src="../assets/js/ui-helper.js"></script>
-
-<!-- ---------- Form Helper ---------- -->
-<script src="../assets/js/form-helper.js"></script>
-
 <!-- ---------- KaTeX ---------- -->
 <script
     defer

@@ -988,7 +988,7 @@ $homeColspan = $isAdmin ? 6 : ($isStudent ? 4 : 5);
 
     <script>
     /* =======================================================
-        TEACHER DROPDOWN SYSTEM
+        TEACHER DROPDOWN FINAL SYSTEM
     ======================================================= */
     function closeAllTeacherDropdowns() {
         document.querySelectorAll('[id^="teacher-dropdown-"]').forEach(dropdown => {
@@ -1037,7 +1037,7 @@ $homeColspan = $isAdmin ? 6 : ($isStudent ? 4 : 5);
     }
 
     /* =======================================================
-        SUBJECT DROPDOWN SYSTEM
+        SUBJECT DROPDOWN
     ======================================================= */
     function closeAllSubjectDropdowns() {
         document.querySelectorAll('[id^="subject-dropdown-"]').forEach(dropdown => {
@@ -1086,7 +1086,7 @@ $homeColspan = $isAdmin ? 6 : ($isStudent ? 4 : 5);
     }
 
     /* =======================================================
-        DROPDOWN AUTO CLOSE
+        CLOSE SUBJECT DROPDOWN
     ======================================================= */
     /* ---------- Auto Close Teacher Dropdown ---------- */
     document.addEventListener("click", closeAllTeacherDropdowns);
@@ -1108,7 +1108,9 @@ $homeColspan = $isAdmin ? 6 : ($isStudent ? 4 : 5);
         };
 
         /* ---------- Icon Initialization ---------- */
-        initLucideIcons();
+        if (window.lucide) {
+            lucide.createIcons();
+        }
 
         /* ---------- Page Refresh Detection ---------- */
         const pageMarkerKey = "home_page_visited";
